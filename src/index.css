@@ -1,3 +1,51 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@keyframes escribir {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.animate-escribir {
+  overflow: hidden;
+  border-right: 2px solid white;
+  white-space: nowrap;
+  width: 0;
+  animation: escribir 2s steps(20) forwards;
+}
+
+
+body {
+  font-family: 'Caveat', cursive;
+}
+@font-face {
+  font-family: 'LoveYaLikeASister'; /* 👈 este nombre debe coincidir EXACTAMENTE con el de `tailwind.config.js` */
+  src: url('./assets/fonts/LoveYaLikeASister.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Sketch_Block';
+  src: url('./assets/fonts/Sketch_Block.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'WalloeXenon';
+  src: url('./assets/fonts/WalloeXenon.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'OCRAEXT';
+  src: url('./assets/fonts/OCRAEXT.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'tt0371m_';
+  src: url('./assets/fonts/tt0371m_.ttf') format('truetype');
+}
+body {
+  cursor: none;
+}
