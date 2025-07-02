@@ -5,19 +5,24 @@ import './App.css'
 import NavBar from './components/NavBar'
 import CanvasPen from'./components/CanvasPen.jsx'
 import MenuButton from './components/MenuButton.jsx';
+import About from './pages/About.jsx';
+
+// Componente principal de la aplicación
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
 
-  const isHome = location.pathname === '/';
+  
 
   return (
     <>
       {/* Solo mostrar botón hamburguesa en Home */}
-      {isHome && !isMenuOpen && (
+      {!isMenuOpen && (
         <MenuButton onClick={() => setIsMenuOpen(true)} />
       )}
+       {isMenuOpen && <NavBar onClose={() => setIsMenuOpen(false)} />}
+      
 
       {/* Navbar solo se monta si está abierto */}
       {isMenuOpen && <NavBar onClose={() => setIsMenuOpen(false)} />}
@@ -27,6 +32,7 @@ function App() {
         {/* <Route path="/about" element={<About />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/contact" element={<Contact />} /> */}
+        <Route path="/about" element={<About isMenuOpen={isMenuOpen} />} />
       </Routes>
     </>
   );
