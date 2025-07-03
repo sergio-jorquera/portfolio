@@ -2,7 +2,7 @@
 export default function Home() {
   return (
     
-    <section className="font-ko flex flex-col justify-center h-screen gap-4 text-left  text-red-600 text-2xl animate animate-balloon" style={{ padding: '1rem' }}>
+    <section className="font-ko flex flex-col justify-center h-screen gap-4 text-left  text-red-500 text-2xl animate animate-balloon" style={{ padding: '1rem' }}>
       <span className="inline-block pointer-events-none">
      
         <h2>Bienvenido a mi portafolio</h2>

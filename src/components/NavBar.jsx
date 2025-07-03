@@ -10,7 +10,7 @@ export default function NavBar({ onClose }) {
     >
       {/* Rotación solo en el contenido, no en el nav */}
       <div
-        className="h-full w-full transform -rotate-6 bg-red-600 bg-opacity-80
+        className="h-full w-full transform -rotate-6 bg-red-500 bg-opacity-80
                    flex flex-col justify-center text-6xl text-white font-kw px-4 py-6 gap-4 animate-balloon1"
       >
          
@@ -23,16 +23,16 @@ export default function NavBar({ onClose }) {
         </button>
 
         {location.pathname !== '/' && (
-          <Link to="/" className="hover:text-blue-400" onClick={onClose}>Inicio</Link>
+          <Link to="/" className="hover:text-5xl" onClick={onClose}>Inicio</Link>
         )}
         {location.pathname !== '/about' && (
-          <Link to="/about" className="hover:text-blue-400" onClick={onClose}>Sobre mí</Link>
+          <Link to="/about" className="hover:text-5xl" onClick={onClose}>Sobre mí</Link>
         )}
         {location.pathname !== '/projects' && (
-          <Link to="/projects" className="hover:text-blue-400" onClick={onClose}>Proyectos</Link>
+          <Link to="/projects" className="hover:text-5xl" onClick={onClose}>Proyectos</Link>
         )}
         {location.pathname !== '/contact' && (
-          <Link to="/contact" className="hover:text-blue-400" onClick={onClose}>Contacto</Link>
+          <Link to="/contact" className="hover:text-5xl" onClick={onClose}>Contacto</Link>
         )}
       </div>
       
