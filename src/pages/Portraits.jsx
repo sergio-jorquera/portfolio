@@ -12,7 +12,7 @@ export default function Portraits() {
   const [selected, setSelected] = useState(null);
 
   const cuadros = [
-    { id: 1, src: leonardCohen },
+    { id: 1, src: leonardCohen, position: "object-top" },
     { id: 2, src: morente },
     { id: 3, src: nina },
     { id: 4, src: dylan },
@@ -22,7 +22,7 @@ export default function Portraits() {
 
   return (
     <div className="p-8">
-      <div className="grid grid-cols-3 gap-0">
+  <div className="grid grid-cols-3 gap-4">
   {cuadros.map((cuadro) => (
     <div
       key={cuadro.id}
@@ -32,11 +32,12 @@ export default function Portraits() {
       <img
         src={cuadro.src}
         alt=""
-        className="w-full h-[300px] object-cover"
+       className={`w-full h-[300px] object-cover ${cuadro.position || ""}`}
       />
     </div>
   ))}
 </div>
+
 
 
       {selected && (

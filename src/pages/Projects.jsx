@@ -18,23 +18,25 @@ const Projects = () => {
       <div className="flex flex-col items-start gap-4 text-left z-10">
         <h1 className="font-ko text-2xl font-bold">Mis Proyectos</h1>
         <ul className="space-y-2">
-          <li><Link to="/projects/portraits" className="hover:text-5xl">Retratos</Link></li>
-          <li
-            onMouseEnter={() => setHoveredProject('paints')}
-            onMouseLeave={() => setHoveredProject(null)}
-          >
-            <Link to="/projects/paints" className="hover:text-5xl">Pinturas</Link>
-          </li>
-          <li
+           <li><Link to="/projects/webs" className="hover:text-5xl">Webs</Link></li>
+           <li><Link to="/projects/branding" className="hover:text-5xl">Branding</Link></li>
+           <li
             onMouseEnter={() => setHoveredProject('ilustrations')}
             onMouseLeave={() => setHoveredProject(null)}
           >
             <Link to="/projects/ilustrations" className="hover:text-5xl">Ilustraciones</Link>
+           </li>
+           <li
+            onMouseEnter={() => setHoveredProject('paints')}
+            onMouseLeave={() => setHoveredProject(null)}
+           >
+          <Link to="/projects/paints" className="hover:text-5xl">Pinturas</Link>
           </li>
-          <li><Link to="/projects/branding" className="hover:text-5xl">Branding</Link></li>
-          <li><Link to="/projects/webs" className="hover:text-5xl">Webs</Link></li>
-        </ul>
-      </div>
+           <li><Link to="/projects/portraits" className="hover:text-5xl">Retratos</Link></li>
+           
+
+      </ul>
+    </div>
 
       {/* Imagen que aparece a la derecha */}
       {hoveredProject && projectImages[hoveredProject] && (
