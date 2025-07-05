@@ -15,11 +15,11 @@ export default function MenuButton({ onClick }) {
   return (
     <button
       onClick={handleClick}
-      className="fixed top-6 right-6 z-[999] p-2"
+      className="fixed top-9 right-14 z-[999] p-2"
     >
       <div
         className={`
-          w-20 h-20 transition-transform 
+          w-[100px] h-[100px] transition-transform 
           hover:rotate-[360deg] hover:duration-500 
           ${isAnimating ? 'animate-growShake' : ''}
         `}
