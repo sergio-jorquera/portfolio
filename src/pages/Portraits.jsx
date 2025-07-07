@@ -34,7 +34,7 @@ export default function Portraits() {
         alt=""
        className={`w-full h-[300px] object-cover ${cuadro.position || ""}`}
       />
-    </div>
+    </div> 
   ))}
 </div>
 

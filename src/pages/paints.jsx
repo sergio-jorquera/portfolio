@@ -1,49 +1,45 @@
 import { useState } from "react";
-import labio from "../assets/labio.jpg";
-import playeros from "../assets/playeros.jpg";
-import trump from "../assets/trump.jpg";
-// Agrega más imágenes si tienes
+import mundo from "../assets/imagenes/bolaMundo.jpg";
+import trump from "../assets/imagenes/trump.jpg";
+import lgtbi from "../assets/imagenes/lgtbi.jpg";
 
 export default function Paints() {
   const [selected, setSelected] = useState(null);
 
-  const cuadros = [
-    { id: 1, src: labio, title: "Labio" },
-    { id: 2, src: playeros, title: "Playeros" },
-    { id: 3, src: trump, title: "Trump" },
-    // Puedes añadir más objetos así
+  const pinturas = [
+    { id: 1, src: mundo, title: "Mundo" },
+    { id: 2, src: trump, title: "Trump" },
+    { id: 3, src: lgtbi, title: "LGTBI" },
   ];
 
   return (
-    <div className="p-8">
-      <h1 className="text-3xl font-bold mb-6">Galería de Pinturas</h1>
-
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-        {cuadros.map((cuadro) => (
+    <div className="min-h-screen bg-white px-10 py-20 flex justify-end">
+      <div className="flex gap-10 items-start">
+        {pinturas.map((pintura) => (
           <div
-            key={cuadro.id}
-            className="transition-transform duration-300 hover:scale-110 cursor-pointer"
-            onClick={() => setSelected(cuadro)}
+            key={pintura.id}
+            className="transition-transform duration-300 hover:scale-105 cursor-pointer"
+            onClick={() => setSelected(pintura)}
           >
             <img
-              src={cuadro.src}
-              alt={cuadro.title}
-              className="w-full h-auto rounded-lg shadow-md"
+              src={pintura.src}
+              alt={pintura.title}
+              className="h-[600px] object-contain rounded-md"
             />
-            <p className="text-center mt-2">{cuadro.title}</p>
           </div>
         ))}
       </div>
 
+      {/* Modal para imagen ampliada */}
       {selected && (
         <div
-          className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50"
+          className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-60 z-50"
           onClick={() => setSelected(null)}
         >
           <img
             src={selected.src}
             alt={selected.title}
-            className="max-w-3xl max-h-[90vh] rounded-xl shadow-2xl"
+            className="max-w-3xl max-h-[90vh] rounded-lg"
           />
         </div>
       )}
