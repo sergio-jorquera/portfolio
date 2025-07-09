@@ -17,7 +17,9 @@
   width: 0;
   animation: escribir 2s steps(20) forwards;
 }
-
+body {
+  overflow: hidden;
+}
 
 body {
   font-family: 'Caveat', cursive;
