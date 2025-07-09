@@ -21,8 +21,9 @@ export default function Portraits() {
   ];
 
   return (
-    <div className="p-8">
-  <div className="grid grid-cols-3 gap-4">
+    <div className="p-8" >
+  <div className="w-[800px] grid grid-cols-3 gap-4 items-end ml-auto">
+
   {cuadros.map((cuadro) => (
     <div
       key={cuadro.id}
