@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import rayo from './../assets/imagenes/rayo.jpg'
 import labios from './../assets/imagenes/labios2.jpg'
+import idiota from './../assets/imagenes/yoidiota.jpg'  
 
 const Projects = () => {
   const [hoveredProject, setHoveredProject] = useState(null)
@@ -9,6 +10,7 @@ const Projects = () => {
   const projectImages = {
     ilustrations: rayo,
     paints: labios,
+    portraits: idiota
     // puedes seguir añadiendo: portraits, branding, webs, etc.
   }
 
@@ -32,7 +34,10 @@ const Projects = () => {
            >
           <Link to="/projects/paints" className="hover:text-5xl">Pinturas</Link>
           </li>
-           <li><Link to="/projects/portraits" className="hover:text-5xl">Retratos</Link></li>
+           <li
+           onMouseEnter={() => setHoveredProject('portraits')}
+           onMouseLeave={() => setHoveredProject(null)}
+           ><Link to="/projects/portraits" className="hover:text-5xl">Retratos</Link></li>
            
 
       </ul>
@@ -44,8 +49,10 @@ const Projects = () => {
           <img
             src={projectImages[hoveredProject]}
             alt={hoveredProject}
-            className="w-[550px] h-auto drop-shadow-[0_8px_12px_rgba(0,0,0,0.6)]"
+            className={`h-auto drop-shadow-[0_8px_12px_rgba(0,0,0,0.6)]
+              ${hoveredProject === 'portraits' ? 'w-[450px]' : 'w-[550px]'}`}
           />
+
         </div>
       )}
     </div>
