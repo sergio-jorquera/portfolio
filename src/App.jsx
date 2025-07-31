@@ -9,6 +9,7 @@ import About from './pages/About.jsx'
 import Projects from './pages/Projects.jsx'
 import Portraits from './pages/Portraits.jsx'
 import Paints from './pages/Paints.jsx'
+import Contact from './pages/Contact.jsx'
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -35,6 +36,7 @@ function App() {
         <Route path="/projects/branding" element={<div>Branding</div>} />
         <Route path="/projects/webs" element={<div>Webs</div>} />
         <Route path="/about" element={<About isMenuOpen={isMenuOpen} />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
     </>
   )
