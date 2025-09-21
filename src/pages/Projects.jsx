@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import rayo from './../assets/imagenes/rayo.jpg'
 import labios from './../assets/imagenes/labios2.jpg'
 import idiota from './../assets/imagenes/yoidiota.jpg'  
+import toquendom from './../assets/imagenes/toquendom.png'
 
 const Projects = () => {
   const [hoveredProject, setHoveredProject] = useState(null)
@@ -10,7 +11,8 @@ const Projects = () => {
   const projectImages = {
     ilustrations: rayo,
     paints: labios,
-    portraits: idiota
+    portraits: idiota,
+    webs: toquendom
     // puedes seguir añadiendo: portraits, branding, webs, etc.
   }
 
@@ -20,7 +22,11 @@ const Projects = () => {
       <div className="flex flex-col items-start gap-4 text-left z-10">
         <h1 className="font-ko text-2xl font-bold">Mis Proyectos</h1>
         <ul className="space-y-2">
-           <li><Link to="/projects/webs" className="hover:text-5xl">Webs</Link></li>
+           <li
+            onMouseEnter={() => setHoveredProject('webs')}
+            onMouseLeave={() => setHoveredProject(null)}
+           >
+           <Link to="/projects/webs" className="hover:text-5xl">Webs</Link></li>
            <li><Link to="/projects/branding" className="hover:text-5xl">Branding</Link></li>
            <li
             onMouseEnter={() => setHoveredProject('ilustrations')}
@@ -47,11 +53,14 @@ const Projects = () => {
       {hoveredProject && projectImages[hoveredProject] && (
         <div className="absolute right-0 top-1/2 transform -translate-y-1/2 transition-opacity duration-500 pointer-events-none opacity-100">
           <img
-            src={projectImages[hoveredProject]}
-            alt={hoveredProject}
-            className={`h-auto drop-shadow-[0_8px_12px_rgba(0,0,0,0.6)]
-              ${hoveredProject === 'portraits' ? 'w-[450px]' : 'w-[550px]'}`}
-          />
+  src={projectImages[hoveredProject]}
+  alt={hoveredProject}
+  className={`h-auto drop-shadow-[0_8px_12px_rgba(0,0,0,0.6)]
+    ${hoveredProject === 'portraits' ? 'w-[450px]' 
+      : hoveredProject === 'webs' ? 'w-[450px]' 
+      : 'w-[550px]'}`}
+/>
+
 
         </div>
       )}
