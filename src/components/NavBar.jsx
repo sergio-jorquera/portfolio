@@ -10,7 +10,7 @@ export default function NavBar({ onClose }) {
     >
       {/* Rotación solo en el contenido, no en el nav */}
       <div
-        className="h-full w-full transform -rotate-6 bg-red-500 bg-opacity-80
+        className="h-full w-full transform -rotate-6 bg-red-500 bg-opacity-100
                    flex flex-col justify-center text-6xl text-white font-kw px-4 py-6 gap-4 animate-balloon1"
       >
          
