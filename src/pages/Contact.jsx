@@ -23,7 +23,7 @@ function ContactForm() {
   return (
    <form 
   onSubmit={handleSubmit} 
-  className="max-w-lg mx-auto pt-20 p-6 bg-white rounded-2xl flex flex-col gap-5 min-h-screen"
+  className="max-w-lg mx-auto mt-40 p-6 bg-white rounded-2xl flex flex-col gap-5 min-h-screen"
 >
   <h2 className="text-2xl font-light relative font-ko text-center text-red-500">Contáctame</h2>
 

@@ -4,7 +4,7 @@ import VolverLogo from "./VolverLogo";
 
 const BackButton = () => (
   <Link to="/projects" className="
-        fixed bottom-3 left-1/2 -translate-x-1/2
+        fixed bottom-0 left-1/2 -translate-x-1/2 translate-y-8
         md:left-16 md:translate-x-0
         z-50 cursor-pointer
       ">
