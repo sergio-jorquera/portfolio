@@ -1,6 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+html, body, #root {
+  height: 100%;
+}
+
+/* Transición suave de colores en toda la UI (opcional) */
+* {
+  @apply transition-colors duration-200;
+}
 @keyframes escribir {
   from {
     width: 0;
@@ -18,11 +26,20 @@
   animation: escribir 2s steps(20) forwards;
 }
 body {
-  overflow: hidden;
-}
+  /* Fondo y color base en ambos temas */
+  @apply bg-white text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100;
 
-body {
+  /* Si necesitas ocultar el scroll, deja esto.
+     Si ves cortes o necesitas scroll, cambia a:
+     overflow-x: hidden;  y/o elimina overflow.
+  */
+  overflow: hidden;
+
+  /* Tipografía base */
   font-family: 'Caveat', cursive;
+
+  /* Cursor personalizado global (si lo usas) */
+  cursor: none;
 }
 @font-face {
   font-family: 'LoveYaLikeASister'; /* 👈 este nombre debe coincidir EXACTAMENTE con el de `tailwind.config.js` */
@@ -47,7 +64,4 @@ body {
 @font-face {
   font-family: 'tt0371m_';
   src: url('./assets/fonts/tt0371m_.ttf') format('truetype');
-}
-body {
-  cursor: none;
 }

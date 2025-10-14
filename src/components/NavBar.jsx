@@ -14,14 +14,14 @@ export default function NavBar({ onClose }) {
     >
       {/* MÓVIL: full screen grid */}
       <div className="
-        h-full w-full bg-red-500 text-white relative
+        h-full w-full bg-red-500 text-white relative dark:text-black relative
         flex flex-col
         md:hidden
       ">
         {/* Botón cerrar */}
         <button
           onClick={onClose}
-          className="absolute top-4 left-4 p-3"
+          className="absolute top-4 left-4 p-3 text-white dark:text-black"
           aria-label="Cerrar menú"
         >
           <X size={32} />
@@ -59,13 +59,13 @@ export default function NavBar({ onClose }) {
           hidden md:flex
           h-full w-full transform -rotate-6
           bg-red-500 bg-opacity-100
-          flex-col justify-center text-6xl text-white font-kw px-4 py-6 gap-4
+          flex-col justify-center text-6xl text-white  dark:text-black font-kw px-4 py-6 gap-4
           animate-balloon1
         "
       >
         <button
           onClick={onClose}
-          className="absolute top-6 left-6 text-white"
+          className="absolute top-6 left-6 text-white dark:text-black"
           aria-label="Cerrar menú"
         >
           <X size={32} />
