@@ -1,5 +1,7 @@
 // src/components/ThemeToggleButton.jsx
-import { useTheme } from "./../context/ThemeContext";
+import { useTheme } from "../context/ThemeContext";
+import lightSwitch from "../assets/imagenes/lightSwitch.svg";
+import darkSwitch  from "../assets/imagenes/darkSwitch.svg";
 
 export default function ThemeToggleButton() {
   const { theme, toggleTheme } = useTheme();
@@ -7,11 +9,17 @@ export default function ThemeToggleButton() {
   return (
     <button
       onClick={toggleTheme}
-      className="rounded-xl px-3 py-1.5 border border-neutral-300 dark:border-neutral-700
-                 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition"
+      aria-label="Cambiar tema"
+      className="fixed top-8 left-20 z-[9999] w-44 h-44 transition-transform duration-300 hover:scale-110"
     >
-    
-      {theme === "dark" ? "OSCURO" : "CLARO"}
+     <img
+  src={theme === "dark" ? darkSwitch : lightSwitch}
+  alt="Interruptor"
+  className={`w-full h-full object-contain transition-transform duration-700 ${
+    theme === "dark" ? "translate-y-[-5px]" : "translate-y-[5px]"
+  }`}
+/>
+
     </button>
   );
 }
