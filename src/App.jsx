@@ -8,17 +8,22 @@ import MenuButton from './components/MenuButton.jsx'
 import About from './pages/About.jsx'
 import Projects from './pages/Projects.jsx'
 import Portraits from './pages/Portraits.jsx'
-import Paints from './pages/Paints.jsx'
+import Paints from './pages/paints.jsx'
 import Contact from './pages/Contact.jsx'
 import ProjectsLayouts from './layouts/ProjectsLayouts.jsx'
 import ThemeToggleButton from "./components/ThemeToggleButton.jsx"; // ← botón de tema
 import LanguageSwitcher from './components/LanguageSwitcher.jsx';
+import Ilustrations from './pages/Ilustrations.jsx';
+import Branding from './pages/Branding';
+import BrandingPaz from "./pages/BrandingPaz.jsx"
+import BrandingOaxaca from "./pages/BrandingOaxaca.jsx" // cambia por tu imagen
+
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const location = useLocation()
 
   return (
-    <div className="min-h-dvh bg-white text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100 transition-colors">
+    <div className="h-screen bg-white text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100 transition-colors">
       {/* Botón de rayo siempre visible cuando menú está cerrado */}
       {!isMenuOpen && <MenuButton onClick={() => setIsMenuOpen(true)} />}
 
@@ -42,8 +47,10 @@ function App() {
     <Route index element={<Projects />} />
     <Route path="portraits" element={<Portraits />} />
     <Route path="paints" element={<Paints />} />
-    <Route path="ilutrations" element={<div>Ilustraciones</div>} />
-    <Route path="branding" element={<div>Branding</div>} />
+    <Route path="ilustrations" element={<Ilustrations />} />
+    <Route path="branding" element={<Branding />} />                 {/* índice con 2 imágenes */}
+    <Route path="branding/paz" element={<BrandingPaz />} />          {/* detalle 1 */}
+    <Route path="branding/oaxaca" element={<BrandingOaxaca />} /> 
     <Route path="webs" element={<div>Webs</div>} />
   </Route>
 

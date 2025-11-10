@@ -33,7 +33,8 @@ body {
      Si ves cortes o necesitas scroll, cambia a:
      overflow-x: hidden;  y/o elimina overflow.
   */
-  overflow: hidden;
+   overflow-x: hidden;   /* ← bloquea el scroll de la ventana */
+  
 
   /* Tipografía base */
   font-family: 'Caveat', cursive;

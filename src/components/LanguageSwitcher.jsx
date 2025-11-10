@@ -1,18 +1,30 @@
-
+// src/components/LanguageSwitcher.jsx
 import { useI18n } from "./../i18n/LanguageProvider";
+import FlagEs from "./EsLogo";
+import FlagEn from "./EnLogo"; // crea este igual que el español
 
 export default function LanguageSwitcher() {
   const { lang, setLang } = useI18n();
   const toggle = () => setLang(lang === "es" ? "en" : "es");
 
+  const isSpanish = lang === "es";
+
   return (
     <button
       onClick={toggle}
-      className="rounded-full border px-3 py-1 text-sm hover:opacity-80"
+      className="
+        fixed top-9 right-48 z-[999]
+        p-4 hover:opacity-80 transition
+        text-black dark:text-red-500
+      "
       aria-label="Toggle language"
-      title="Cambiar idioma"
+      title={isSpanish ? "Switch to English" : "Cambiar a español"}
     >
-      {lang.toUpperCase()}
+      {isSpanish ? (
+        <FlagEs className="w-7 h-7" />
+      ) : (
+        <FlagEn className="w-7 h-7" />
+      )}
     </button>
   );
 }

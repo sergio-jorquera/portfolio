@@ -16,7 +16,7 @@ export default function ThemeToggleButton() {
   src={theme === "dark" ? darkSwitch : lightSwitch}
   alt="Interruptor"
   className={`w-full h-full object-contain transition-transform duration-700 ${
-    theme === "dark" ? "translate-y-[-5px]" : "translate-y-[5px]"
+    theme === "dark" ? "translate-y-[-5px]" : "translate-y-[px]"
   }`}
 />
 
