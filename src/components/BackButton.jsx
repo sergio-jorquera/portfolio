@@ -13,8 +13,8 @@ const BackButton = () => {
       to="/projects"
       className="
         fixed
-        left-1/2 -translate-x-1/2
-        bottom-[80px]
+        left-4
+        bottom-[80px] 
         md:left-[140px] md:translate-x-0
         z-[9999] cursor-pointer
       "

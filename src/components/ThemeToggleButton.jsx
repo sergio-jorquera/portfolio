@@ -10,7 +10,7 @@ export default function ThemeToggleButton() {
     <button
       onClick={toggleTheme}
       aria-label="Cambiar tema"
-      className="fixed top-8 left-20 z-[9999] w-44 h-44 transition-transform duration-300 hover:scale-110"
+      className=" w-44 h-44 transition-transform duration-300 hover:scale-110"
     >
      <img
   src={theme === "dark" ? darkSwitch : lightSwitch}

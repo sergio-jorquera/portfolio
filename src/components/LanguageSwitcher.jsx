@@ -13,7 +13,7 @@ export default function LanguageSwitcher() {
     <button
       onClick={toggle}
       className="
-        fixed top-9 right-48 z-[999]
+       
         p-4 hover:opacity-80 transition
         text-black dark:text-red-500
       "

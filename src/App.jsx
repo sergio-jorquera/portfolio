@@ -16,25 +16,24 @@ import LanguageSwitcher from './components/LanguageSwitcher.jsx';
 import Ilustrations from './pages/Ilustrations.jsx';
 import Branding from './pages/Branding';
 import BrandingPaz from "./pages/BrandingPaz.jsx"
-import BrandingOaxaca from "./pages/BrandingOaxaca.jsx" // cambia por tu imagen
+import BrandingOaxaca from "./pages/BrandingOaxaca.jsx" 
+import MusicButton from "./components/MusicButton.jsx"
+import UiHud from "./components/UiHud.jsx/"
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const location = useLocation()
 
-  return (
-    <div className="h-screen bg-white text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100 transition-colors">
-      {/* Botón de rayo siempre visible cuando menú está cerrado */}
-      {!isMenuOpen && <MenuButton onClick={() => setIsMenuOpen(true)} />}
-
-      {/* Menú lateral */}
-      {isMenuOpen && <NavBar onClose={() => setIsMenuOpen(false)} />}
-         {/* Header fijo con el botón de tema (puedes moverlo a tu NavBar si prefieres) */}
-      <header className="fixed right-4 top-4 z-50">
-         <LanguageSwitcher />  
-        <ThemeToggleButton />
+  return ( <div className="h-screen bg-white text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100 transition-colors"> {/* Botón de rayo siempre visible cuando menú está cerrado */} 
+  {!isMenuOpen && <MenuButton onClick={() => setIsMenuOpen(true)} />} {/* Menú lateral */} 
+  {isMenuOpen && <NavBar onClose={() => setIsMenuOpen(false)} />} {/* Header fijo con el botón de tema (puedes moverlo a tu NavBar si prefieres) */} 
+    <header className="fixed left-[100px] top-16 z-50 flex items-center gap-4"> 
+      <ThemeToggleButton />
+      <MusicButton /> 
+      <LanguageSwitcher /> 
+       
       </header>
-
+      
       {/* Opcional: dejar CanvasPen solo en ciertas rutas */}
       <CanvasPen />
 
@@ -56,8 +55,9 @@ function App() {
 
   <Route path="/about" element={<About isMenuOpen={isMenuOpen} />} />
   <Route path="/contact" element={<Contact />} />
-</Routes>
-    </div>
+  </Routes>
+<UiHud/>
+</div>
   )
 }
 
