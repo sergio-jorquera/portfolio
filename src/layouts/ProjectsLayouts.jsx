@@ -1,11 +1,18 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import BackButton from "../components/BackButton";
 
 export default function ProjectsLayouts() {
+  const { pathname } = useLocation();
+  const showBack = pathname !== "/projects";
+
   return (
     <div className="relative min-h-screen">
-      <BackButton />   {/* 👈 botón Volver en todas las páginas hijas */}
-      <Outlet />       {/* aquí se renderizan Projects, Paints, Portraits, etc. */}
+      {showBack && (
+        <div className="sticky top-4 left-4 z-50">
+          <BackButton />
+        </div>
+      )}
+      <Outlet />
     </div>
   );
 }

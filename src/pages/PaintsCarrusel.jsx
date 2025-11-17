@@ -2,13 +2,15 @@ import { useState } from "react";
 import CardPaint from "../components/CardPaint";
 
 // Imágenes de ejemplo
-import lgtbi from "../assets/imagenes/lgtbi.jpg";
-import black from "../assets/imagenes/black.jpg";
-import shoes from "../assets/imagenes/shoes.jpg";
-import toro from "../assets/imagenes/toro.jpg";
-import trump from "../assets/imagenes/trump.jpg";
-import bolaMundo from "../assets/imagenes/bolaMundo.jpg";
-import diente from "../assets/imagenes/diente.jpg";
+import lgtbi from "../assets/imagenes/8_8.jpg";
+import black from "../assets/imagenes/2_2.png";
+import shoes from "../assets/imagenes/5_5.jpg";
+import toro from "../assets/imagenes/6_6.jpg";
+import trump from "../assets/imagenes/4_4.jpg";
+import bolaMundo from "../assets/imagenes/10_10.jpg";
+import diente from "../assets/imagenes/7_7.jpg";
+import vacuna from "../assets/imagenes/3_3.jpg";
+import labios from "../assets/imagenes/1_1.jpg";
 
 
 function PaintsCarrusel() {
@@ -20,6 +22,8 @@ function PaintsCarrusel() {
     { imagen: trump, titulo: "Naturaleza", descripcion: "Paseo entre árboles." },
     { imagen: bolaMundo, titulo: "Naturaleza", descripcion: "Paseo entre árboles." },
     { imagen: diente, titulo: "Naturaleza", descripcion: "Paseo entre árboles." },
+    { imagen: vacuna, titulo: "Naturaleza", descripcion: "Paseo entre árboles." },
+    { imagen: labios, titulo: "Naturaleza", descripcion: "Paseo entre árboles." },
   ];
 
   // índice actual (cuál card se muestra)
